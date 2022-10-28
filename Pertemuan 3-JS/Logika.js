@@ -1,4 +1,4 @@
-// alert("Selamat Datang diAplikasi Operation")
+alert("Selamat Datang diAplikasi Operation")
 
 function angka () {
     let tampil = confirm("Apakah Sudah Yakin?"); 
