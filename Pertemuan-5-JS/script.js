@@ -1,10 +1,20 @@
-function angka() {
-    let tampil = prompt("Masukkan Angka")
-        tampil = false ? "" : cek()
+
+let number = prompt("masukkan angka ?");
+
+
+if (!isNaN(number) && number >= 0) {
+  
+    if (number % 2 === 0) {
+    alert("Bilangan Genap"); 
+    } else {
+    alert("Bilangan Ganjil"); 
+    }
+} else { 
+    alert("Input salah");
 }
 
 
-function cek() {
+function angka() {
     let bilangan = document.getElementById("input").value
     let notif
     if (bilangan%2==0) {
