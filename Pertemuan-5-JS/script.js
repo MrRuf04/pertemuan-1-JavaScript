@@ -1,17 +1,20 @@
 
-let number = prompt("masukkan angka ?");
+function main() {
+    let number = prompt("masukkan angka ?");
 
 
 if (!isNaN(number) && number >= 0) {
-  
+
     if (number % 2 === 0) {
-    alert("Bilangan Genap"); 
+        alert("Bilangan Genap"); 
     } else {
-    alert("Bilangan Ganjil"); 
+        alert("Bilangan Ganjil"); 
     }
-} else { 
-    alert("Input salah");
+    } else { 
+        alert("Input salah");
+    }
 }
+main()
 
 
 function angka() {
