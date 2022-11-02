@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: bisque
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow:0px 2px 11px 1px #888A80;
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 30vw;
+            height: 20vw;
+        }
+        .container form h2 {
+        font-size: 25px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-weight: 500;
+        }
+        .opsi {
+            flex-direction: row;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form name="kalkulator1" action="#">
+            <h2>Kalkulator Sederhana</h2>
+            <input type="text" name="angka1" placeholder="Masukkan Angka1"><br>
+            <input type="text" name="angka2" placeholder="Masukkan Angka2"><br>
+            <input type="text" name="hasil" disabled="true" value="hasil"><br>
+            <div class="opsi">
+                <select name="opt">
+                    <option value="tambah"> + (Penjumlahan)</option>
+                    <option value="kurang"> - (Pengurangan)</option>
+                    <option value="kali"> * (Perkalian)</option>
+                    <option value="bagi"> / (Pembagian)</option>
+                    <option value="persen"> % (Persen) </option>
+                </select>
+
+                <input class="button" type="button" value="=" onclick="hitung()">
+                <input class="button" type="button" value="CLEAR" onclick="resetForm()">
+            </div><br>
+            <span>Copyright &#169; Amar Ma'ruf ♡</span>
+        </form>
+    </div>
+
+</body>
+<script>
+    function hitung() {
+    let myFrom = document.kalkulator1
+    let angka1=eval (myFrom.angka1.value)
+    let angka2=eval (myFrom.angka2.value)
+    let pilihan= myFrom.opt.value
+
+
+    if (pilihan == "tambah") {
+        angka = angka1 + angka2
+    } else if (pilihan == "kurang") {
+        angka = angka1 - angka2
+    } else if (pilihan == "kali") {
+        angka = angka1 * angka2
+    }else if (pilihan == "bagi") {
+        angka = angka1 / angka2
+    } else if (pilihan == "persen") {
+        angka = (angka1 / angka2) * (0.5)
+    }
+
+    myFrom.hasil.value = angka;
+    myFrom.angka1.value = "";
+    myFrom.angka2.value = "";
+    }
+
+    function resetForm() {
+        document.kalkulator1.reset()
+    }
+    console.log()
+</script>
+</html>
