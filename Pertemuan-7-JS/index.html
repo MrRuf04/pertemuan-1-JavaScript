@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tugas Mandiri 7</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow:0px 2px 11px 1px #888A80;
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 30vw;
+            height: 20vw;
+            background-color: rgb(196, 241, 241);
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="#">
+            <h2>Object & Array JavaScript</h2>
+            <input type="text" id="hewan1"><br>
+            <div class="button">
+                <button type="submit" onclick="getHewan()">Menambahkan</button>
+                <button type="submit" onclick="getUbah()">Mengubah</button>
+                <button type="submit" onclick="getDelete()">Menghapus</button>
+            </div>
+            <h4 id="hasil">Nama Hewan : Gajah,Ikan,Harimau</h4>
+        </form>
+
+    </div>
+</body>
+<script>
+
+    let binatang = [
+        'Gajah',
+        'Ikan',
+        'Harimau',
+    ]
+    const getHewan = () => {
+        let inputan = document.getElementById("hewan1").value
+        let hasil = document.getElementById("hasil")
+        binatang.push(inputan)
+        hasil.innerHTML = "Nama Hewan : "+binatang+""
+    }
+
+    const getUbah = () => {
+        let hasil = document.getElementById("hasil")
+        let ubah = binatang[2] = "Kucing"
+        hasil.innerHTML = "Nama Hewan : "+binatang+""
+    }
+
+    const getDelete = () => {
+        let hasil = document.getElementById("hasil")
+        let hapus = delete binatang[0]
+        hasil.innerHTML = "Nama Hewan : "+binatang+""
+    }
+
+
+</script>
+</html>
