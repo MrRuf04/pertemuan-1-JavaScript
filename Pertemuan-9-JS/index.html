@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OPP Tumbuhan</title>
+</head>
+<body>
+    
+</body>
+<script>
+    class Tumbuhan {
+
+        tumbuh(tumbuh) {
+            console.log("Tumbuhan ini dapat tumbuh didataran " + tumbuh) // (+ tumbuh) =  dataran tinggi & rendah 
+        }
+        
+        buah(buah) {
+            console.log("Tumbuhan ini " + buah) // (+ buah) = tidak berbuah & berbuah 
+        }
+    }
+
+    //  3 objek tumbuhan buah, bunga, sayuran
+    buah = new Tumbuhan()
+    buah.nama = "Mangga"
+    buah.jenis = "Buah-buahan"
+    buah.warna = "Kuning"
+
+    bunga = new Tumbuhan()
+    bunga.nama = "Matahari"
+    bunga.jenis = "Bunga"
+    bunga.warna = "Kuning"
+
+    sayuran = new Tumbuhan()
+    sayuran.nama = "Bayam"
+    sayuran.jenis = "Sayuran"
+    sayuran.warna = "Putih"
+
+    console.log(buah)
+    console.log(bunga)
+    console.log(sayuran)
+</script>
+</html>
