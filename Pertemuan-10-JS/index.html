@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplikasi Konversi Mata Uang</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+
+<body>
+	
+<br><br><br>
+<h1 align="center">Aplikasi Konversi Mata Uang</h1><br>
+
+<table border="1" class="border border-success shadow" align="center" width="700" height="200">
+	<tr>
+	<td align="center"> Mata Uang Asal<br><br>
+		<div class="container">
+		<form id="pilihan1" name="form1">
+
+			<select id="pilih1" class="form-control">
+				<option value="rupiah">Indonesia-Rupiah</option>
+				<option value="dinar">Kuwait-Dinar</option>
+				<option value="dolar">Amerika-Dolar</option>
+				<option value="pound">Inggris-Poundsterling</option>
+				<option value="ringgit">Malaysia-Ringgit</option>
+				<option value="rupe">India-Rupe</option>
+				<option value="euro">Prancis-Euro</option>
+			</select>
+
+		</form>
+
+		<br><input id="inputan" class="form-control" type="text" placeholder="" name=""><br>
+
+			<input type="button" class="btn btn-success" onclick="hitung()" name="" value="Hitung">
+
+	</td>
+
+	<td align="center"> Mata Uang Tujuan<br><br>
+		<div class="container">
+		<form id="pilihan2" name="form2">
+			<select id="pilih2" class="form-control">
+				<option value="rupiah">Indonesia-Rupiah</option>
+                <option value="dinar">Kuwait-Dinar</option>
+                <option value="dolar">Amerika-Dolar</option>
+                <option value="pound">Inggris-Poundsterling</option>
+                <option value="ringgit">Malaysia-Ringgit</option>
+                <option value="rupe">India-Rupe</option>
+                <option value="euro">Prancis-Euro</option>
+			</select>
+		</form>
+		<br>
+	    	Hasilnya : <span id="tampil">0</span>
+		</form>
+	</td>
+
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+	function hitung() {
+		
+		var x = document.getElementById('pilihan1').pilih1.value;
+		var y = document.getElementById('pilihan2').pilih2.value;
+		var masukan = parseFloat(inputan.value);
+
+		if (x == "rupiah" && y == "rupiah" || 
+        x == "dinar" && y == "dinar" || 
+        x == "dolar" && y == "dolar" || 
+        x == "pound" && y == "pound" || 
+        x == "ringgit" && y == "ringgit" || 
+        x == "rupe" && y == "rupe" || 
+        x == "euro" && y == "euro") {
+
+			var hasil = masukan ;
+
+			document.getElementById("tampil").innerHTML = hasil;
+
+		} else if (x == "rupiah" && y == "dolar") {
+
+			hasil = masukan * 0.000064;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "rupiah" && y == "dinar") {
+
+			hasil = masukan * 0.000020;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "rupiah" && y == "pound") {
+			hasil = masukan * 0.000056;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "rupiah" && y == "ringgit") {
+			hasil = masukan * 0.00030;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "rupiah" && y == "rupe") {
+			hasil = masukan * 0.0052;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "rupiah" && y == "euro") {
+			hasil = masukan * 0.000064;
+
+			document.getElementById("tampil").innerHTML = "RP. " + hasil;
+		} else if (x == "dolar" && y == "rupiah") {
+			hasil = masukan * 15645.75;
+
+			document.getElementById("tampil").innerHTML = "$ " + hasil;
+		} else if (x == "dolar" && y == "dinar") {
+			hasil = masukan * 0.31;
+
+			document.getElementById("tampil").innerHTML = "$ " + hasil;
+		} else if (x == "dolar" && y == "pound") {
+			hasil = masukan * 0.87;
+
+			document.getElementById("tampil").innerHTML = "$ " + hasil;
+		} else if (x == "dolar" && y == "ringgit") {
+			hasil = masukan * 4.74;
+
+			document.getElementById("tampil").innerHTML = "$ " +  hasil;
+		} else if (x == "dolar" && y == "rupe") {
+			hasil = masukan * 81.61;
+
+			document.getElementById("tampil").innerHTML = "$ " + hasil;
+		} else if (x == "dolar" && y == "euro") {
+			hasil = masukan * 1.00;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "rupiah") {
+			hasil = masukan * 50607,85;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "dolar") {
+			hasil = masukan * 3,23;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "pound") {
+			hasil = masukan * 2,83;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "ringgit") {
+			hasil = masukan * 15,32;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "rupe") {
+			hasil = masukan * 263,70;
+
+			document.getElementById("tampil").innerHTML = "KWD " + hasil;
+		} else if (x == "dinar" && y == "euro") {
+			hasil = masukan * 3,23;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		} else if (x == "pound" && y == "rupiah") {
+			hasil = masukan * 17.901,58;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "pound" && y == "dolar") {
+			hasil = masukan * 1,14;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "pound" && y == "dinar") {
+			hasil = masukan * 0.35;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "pound" && y == "ringgit") {
+			hasil = masukan * 5,42;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "pound" && y == "rupe") {
+			hasil = masukan * 93,32;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "pound" && y == "euro") {
+			hasil = masukan * 1,14;
+
+			document.getElementById("tampil").innerHTML = "£ " + hasil;
+		}
+		else if (x == "ringgit" && y == "rupiah") {
+			hasil = masukan * 3.303,11;
+
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		}
+		else if (x == "ringgit" && y == "dolar") {
+			hasil = masukan * 0.21;
+
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		} else if (x == "ringgit" && y == "dinar") {
+			hasil = masukan * 0.065;
+
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		} else if (x == "ringgit" && y == "pound") {
+			hasil = masukan * 0.18;
+
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		} else if (x == "ringgit" && y == "euro") {
+			hasil = masukan * 0.21;
+
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		} else if (x == "ringgit" && y == "rupe") {
+			hasil = masukan * 17,21;
+			document.getElementById("tampil").innerHTML = "RM " + hasil;
+		} else if (x == "rupe" && y == "dolar") {
+			hasil = masukan * 0.012;
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "rupe" && y == "dinar") {
+			hasil = masukan * 0.0038;
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "rupe" && y == "ringgit") {
+			hasil = masukan * 0.058;
+
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "rupe" && y == "pound") {
+			hasil = masukan * 0.011;
+
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "rupe" && y == "rupiah") {
+			hasil = masukan * 0.0052;
+
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "rupe" && y == "euro") {
+			hasil = masukan * 0.012;
+
+			document.getElementById("tampil").innerHTML = "₹ " + hasil;
+		} else if (x == "euro" && y == "rupiah") {
+			hasil = masukan * 15.642,48;
+
+			document.getElementById("tampil").innerHTML = "€ " +hasil;
+		} else if (x == "euro" && y == "dolar") {
+			hasil = masukan * 1,00;
+
+			document.getElementById("tampil").innerHTML = "€ " + hasil;
+		} else if (x == "euro" && y == "dinar") {
+			hasil = masukan * 0.31;
+
+			document.getElementById("tampil").innerHTML = "€ " + hasil;
+		} else if (x == "euro" && y == "ringgit") {
+			hasil = masukan * 4,74;
+
+			document.getElementById("tampil").innerHTML = "€ " + hasil;
+		} else if (x == "euro" && y == "pound") {
+			hasil = masukan * 0.87;
+
+			document.getElementById("tampil").innerHTML = "€ " + hasil;
+		} else if (x == "euro" && y == "rupe") {
+			hasil = masukan * 81,53;
+
+			document.getElementById("tampil").innerHTML = "€ " + hasil;
+		}
+
+	}
+
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
