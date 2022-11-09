@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aplikasi Konversi Mata Uang</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+</head>
+<body>
+<br><br><br>
+<h1 align="center">Aplikasi Konversi Suhu</h1><br>
+
+<table border="1" class="border shadow border-primary" align="center" width="750" height="250">
+	<tr>
+	<td align="center"> Suhu Asal<br><br>
+		<div class="container">
+		<form id="pilihan1" name="form1">
+
+			<select id="pilih1" class="form-control">
+				<option value="celcius">Skala Celcius</option>
+				<option value="fahrenheit">Skala Fahrenheit</option>
+				<option value="kelvin">Skala Kelvin</option>
+				<option value="reamur">Skala Reamur</option>
+			</select>
+
+		</form>
+
+		<br><input id="inputan" class="form-control" type="text" placeholder="" name=""><br>
+
+			<input type="button" class="btn btn-primary" onclick="hitung()" name="" value="Hitung">
+
+	</td>
+
+	<td align="center"> Suhu Tujuan<br><br>
+		<div class="container">
+		<form id="pilihan2" name="form2">
+			<select id="pilih2" class="form-control">
+				<option value="celcius">Skala Celcius</option>
+				<option value="fahrenheit">Skala Fahrenheit</option>
+				<option value="kelvin">Skala Kelvin</option>
+				<option value="reamur">Skala Reamur</option>
+			</select>
+		</form>
+		<br>
+	        Hasilnya : <span id="tampil">0</span>
+		</form>
+	</td>
+
+	</tr>
+</table>
+
+<script type="text/javascript">
+
+	function hitung() {
+		
+		var x = document.getElementById('pilihan1').pilih1.value;
+		var y = document.getElementById('pilihan2').pilih2.value;
+		var masukan = parseFloat(inputan.value);
+
+		if (x == "celcius" && y == "celcius" || 
+		x == "fahrenheit" && y == "fahrenheit" || 
+		x == "kelvin" && y == "kelvin" || 
+		x == "reamur" && y == "reamur") {
+
+			var hasil = masukan ;
+
+			document.getElementById("tampil").innerHTML = hasil;
+
+		} else if (x == "celcius" && y == "fahrenheit") {
+
+			hasil = masukan * 9/5 + 32;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "celcius" && y == "kelvin") {
+
+			hasil = masukan + 273;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "celcius" && y == "reamur") {
+			hasil = masukan * 4/5;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "fahrenheit" && y == "celcius") {
+			hasil = masukan * 5/9 - 32;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "fahrenheit" && y == "kelvin") {
+			hasil = masukan * 5/9 + 273;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "fahrenheit" && y == "reamur") {
+			hasil = masukan * 4/9 - 32;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "kelvin" && y == "celcius") {
+			hasil = masukan - 273;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "kelvin" && y == "fahrenheit") {
+			hasil = masukan * 9/5 + 32;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "kelvin" && y == "reamur") {
+			hasil = masukan * 4/5 - 273;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "reamur" && y == "celcius") {
+			hasil = masukan * 5/4;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "reamur" && y == "fahrenheit") {
+			hasil = masukan * 9/4 + 32;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}else if (x == "reamur" && y == "kelvin") {
+			hasil = masukan * 5/4 + 273;
+
+			document.getElementById("tampil").innerHTML = hasil;
+		}
+
+	}
+
+
+</script>
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
