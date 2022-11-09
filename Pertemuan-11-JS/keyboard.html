@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Keyboard</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100vh;
+        }
+        .container .form{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, .3),
+                -23px 0 20px -23px rgba(137, 134, 134, 0.8),
+                23px 0 20px -23px rgba(122, 121, 121, 0.8),
+                inset 0 0 40px rgba(0, 0, 0, .1);
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 25vw;
+            height: 25vw;
+        }
+    </style>
+<body>
+    <div class="container">
+        <div class="form">
+            <h2>Program Keyboard</h2>
+            <p>Program ini berfungsi saat kamu menekan keyboard</p>
+            <input type="text" id="input" onkeydown="myFunction()">
+            <div id="text"></div>
+
+            <p id="keydown"></p>
+            <p id="pressed"></p>
+            <p id="keyup"></p>
+        </div>
+        <footer><span>Copyright &#169; Amar Ma'ruf ♡</span></footer>
+    </div>
+
+<script>
+function myFunction() {
+    var inputText = document.getElementById("input").value;
+    document.getElementById("text").innerHTML = inputText;
+}
+
+const keydown = document.getElementById("keydown");
+    const pressed = document.getElementById("pressed");
+    const keyup = document.getElementById("keyup");
+
+    document.addEventListener("keydown", function (event) {
+        keydown.innerText = `menekan: ${event.key}`;
+    });
+    
+    document.addEventListener("keypress", function (event) {
+        pressed.innerText = `menahan: ${event.key}`;
+    });
+
+    document.addEventListener("keyup", function (event) {
+        keyup.innerText = `melepas: ${event.key}`;
+    });
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Mouse</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: sans-serif;
+            overflow: hidden;
+            cursor: none;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .container form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow:0px 2px 11px 1px #888A80;
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 30vw;
+            height: 20vw;
+            background-color: rgba(84, 47, 47, 0.097);
+        }
+        .input {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row;
+        }
+        .button {
+            display: flex;
+            flex-direction: row;
+        }
+        h1 {
+            margin-top: -30px;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: #282a21;
+        }
+        #cursor {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #000;
+            box-sizing: border-box;
+            transition: 0.1s;
+            transform: translate(-50%,-50%);
+            border-radius: 50%;
+            pointer-events: none;
+        }
+        span {
+            margin-bottom: -10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="cursor"></div>
+    <div class="container">
+        <form action="#"><br>
+        <h1>
+            Program Mouse
+        </h1>
+        <div class="input">
+            <input type="text" id="input" placeholder="Masukkan Username" required>
+            <input type="password" id="input" placeholder="Masukkan Password" required>
+        </div><br>
+        <div class="button">
+            <button id="btn-enter">Masuk</button>
+            <button id="btn-hover">Klik Ini!</button>
+            <button id="btn-out">Keluar</button>
+        </div>
+        </form>
+        <span>Copyright &#169; Amar Ma'ruf ♡</span>
+    </div>
+    
+</body>
+<script>
+
+    let cursor = document.getElementById('cursor')
+
+    document.addEventListener("mousemove", function(e) {
+        let x = e.clientX
+        let y = e.clientY
+        cursor.style.left = x + "px"
+        cursor.style.top = y + "px"
+    })
+
+    const btnEnter = document.getElementById("btn-enter")
+    const btnHover = document.getElementById("btn-hover")
+    const btnOut = document.getElementById("btn-out")
+
+
+
+    btnEnter.addEventListener("mouseenter", function(event) {
+        event.target.innerText = "Kamu Sudah Masuk"
+    });
+
+    btnOut.addEventListener("mouseout", function(event){
+        event.target.innerText = "Kamu Sudah Keluar"
+    });
+
+    btnHover.addEventListener("mouseover", function(event){
+        event.target.innerText = "Tetap Semangat Kamu Pasti Bisa :)"
+    });
+</script>
+</html>

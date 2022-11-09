@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            text-align: center;
+            height: 100vh;
+        }
+        .container .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            box-shadow: 0px 20px 0 -17px #fff,
+                0px -20px 0 -17px #fff,
+                0px 20px 0 -20px #c27153,
+                0 0 0 2px #c27153;
+            padding: 20px 40px;
+            border-radius: 10px;
+            width: 25vw;
+            height: 25vw;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <p>Pilih mobil baru dari daftar yang ada.</p>
+            <select id="mySelect" OnChange="myFunction()">
+                <option value="Audi">Audi</option>
+                <option value="BMW">BMW</option>
+                <option value="Mercedes">Mercedes</option>
+                <option value="Volvo">Volvo</option>
+            </select>
+            <p>Pilihlah sesuai yang kamu inginkan :)</p>
+            <p id="demo"></p>
+        </div>
+        <footer><span>Copyright &#169; Amar Ma'ruf ♡</span></footer>
+    </div>
+</body>
+<script>
+    function myFunction() {
+    var x = document.getElementById("mySelect").value;
+    document.getElementById("demo").innerHTML = "Kamu Memilih: " + x;
+}
+</script>
+</html>
