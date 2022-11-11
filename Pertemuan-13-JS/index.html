@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form JavaScript</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300&family=League+Spartan:wght@100;200;300;400;500;600;700;800;900&family=Poppins:wght@100;200;300;400&family=Roboto:wght@300&family=Shadows+Into+Light&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        html,
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(138, 142, 142, 0.598);
+        }
+
+        p {
+            color: rgb(255, 130, 130);
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            background-color: rgb(255, 255, 255);
+            border-radius: 6px;
+            padding: 80px;
+            margin: 0 15px;
+            box-shadow: 2px 5px 0px 0 rgba(0, 240, 240, 0.13);
+        }
+
+        .container header {
+            position: relative;
+            font-size: 25px;
+            font-weight: 1000;
+            color: #333;
+            text-align: center;
+        }
+
+        .container header span {
+            color: rgb(84, 121, 121);
+        }
+
+        .container header::before {
+            content: "";
+            position: absolute;
+            left: 10;
+            bottom: -2px;
+            height: 3px;
+            width: 27px;
+            border-radius: 8px;
+            background-color: rgb(80, 98, 98);
+        }
+
+        .container form {
+            position: relative;
+            padding: 80px;
+            margin-top: 4px;
+        }
+
+        .container form .detail {
+            margin-top: 10px;
+        }
+
+        .container form .title {
+            font-size: 16px;
+            font-weight: 900;
+            margin: 6px 0;
+            color: #333;
+        }
+
+        .input-field label {
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .input-field input {
+            height: 35px;
+        }
+
+        .input-field input:is(:focus, :valid) {
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.13);
+        }
+
+        .btn:hover {
+            background-color: rgb(102, 99, 99);
+        }
+    </style>
+</head>
+
+<body onload="prompName()">
+
+    <div class="container">
+
+        <header>Pendaftaran <span> Mahasantri</span> </header>
+        <form name="login">
+            <div class="form-first">
+                <div class="detail personal">
+                    <span class="title">Data Pribadi :</span>
+                    <div class="field"><br>
+                        <div class="input-field">
+                            <label>Nama lengkap</label>
+                            <input class="form-control m-2" type="text" name="nama" placeholder="Masukkan Nama Lengkap"
+                                required>
+                            <label>Tanggal Lahir</label>
+                            <input class="form-control m-2" type="date" name="date"
+                                placeholder="Masukkan Tanggal Lahir">
+                            <label>Email</label>
+                            <input class="form-control m-2" type="email" name="email"
+                                placeholder="Masukkan alamat email">
+                            <label>Nomor Ponsel</label>
+                            <input class="form-control m-2" type="tel" name="tel" placeholder="(9999)-99999999"
+                                required>
+                            <label>Agama</label>
+                            <select class="form-control m-2" name="agama">
+                                <option value="islam">Islam</option>
+                                <option value="kristen">Kristen</option>
+                                <option value="hindu">Hindu</option>
+                                <option value="buddha">Buddha</option>
+                            </select>
+                            <label for="">Jenis Kelamin</label>
+                            <select class="form-control m-2" name="gender">
+                                <option value="Laki-laki">Laki-laki</option>
+                                <option value="perempuan">Perempuan</option>
+                            </select>
+                            <button class="btn btn-dark m-2" type="submit" id="simpan">submit</button>
+                            <button class="btn btn-dark m-2" id="button" onclick="loadContent()">Load Content</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <p id="hasil"></p>
+        </form>
+    </div>
+
+</body>
+<script>
+    let btnSimpan = document.getElementById("simpan")
+    let hasil = document.getElementById("hasil")
+
+    let login = document.forms.login
+    let nama = login.elements.nama
+    let tel = login.elements.tel
+    let tanggal = login.elements.date
+    let agama = login.elements.agama
+    let email = login.elements.email
+    let jenisKel = login.elements.gender
+    let cek = false
+
+    //     nama.onchange = () => {
+    //         hasil.innerHTML = nama.value
+    // }
+
+    email.onblur = () => {
+        if (!email.value.includes('@')) {
+            hasil.innerHTML = "Kamu harus menyertakan tanda '@' pada inputan email"
+
+        } else {
+            hasil.innerHTML = ""
+            cek = true
+        }
+    }
+
+    btnSimpan.onclick = (event) => {
+        event.preventDefault()
+
+
+        let valueNama = nama.value //inputan
+        let valueTanggal = tanggal.value
+        let valueTel = tel.value
+        let valueAgama = agama.value // islam
+        let valueGender = jenisKel.value
+        let valueEmail = email.value // inputan email
+        let selectAgama = agama.options[agama.selectedIndex].text
+        let selectGender = jenisKel.options[jenisKel.selectedIndex].text
+
+        if (cek == true) {
+            hasil.innerHTML = "Proses Pendaftaran Berhasil Atas Nama : " + valueNama + "<br>" + " Tanggal Lahir : " + valueTanggal + "<br>" + " Agama : " + selectAgama + "<br>" + " Email : " + valueEmail + "<br>" + "Nomor Ponsel : " + valueTel + "<br>" + "Jenis Kelamin : " + selectGender + "<br>" + "Terima Kasih ♡ "
+        }
+    }
+    let welcome = "";
+
+    const promptName = () => {
+        let welcome = prompt("Siapa Nama Kamu ?")
+        return welcome
+    }
+
+    const bye = () => {
+        alert("Selamat Datang " + promptName())
+    }
+    window.onunload = bye();
+    
+
+    const loadContent = () => {
+        let x = new XMLHttpRequest();
+        let a = "https://amrapp.netlify.app/"
+
+        x.onloadstart = function () {
+            document.getElementById("button").innerHTML = "Loading..."
+        }
+
+        x.onerror = function () {
+            alert("Gagal mengambil data")
+        }
+    }
+
+    window.addEventListener("beforeunload", () => {
+        // Batalkan acara seperti yang dinyatakan oleh standar.
+        event.preventDefault();
+        // Chrome membutuhkan returnValue untuk disetel.
+        event.returnValue = 'simpan';
+    });
+</script>
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+
+</html>
